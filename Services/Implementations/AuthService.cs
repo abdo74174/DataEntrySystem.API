@@ -29,7 +29,10 @@ namespace DataEntrySystem.API.Services.Implementations
         public async Task<AuthResponseDto?> LoginAsync(LoginDto loginDto)
         {
             var user = await _userRepository.GetByUsernameAsync(loginDto.Username);
-            if (user == null || !BCrypt.Net.BCrypt.Verify(loginDto.Password, user.PasswordHash) || user.Role != loginDto.Role)
+            
+            if (user == null || 
+                !BCrypt.Net.BCrypt.Verify(loginDto.Password, user.PasswordHash) || 
+                !string.Equals(user.Role, loginDto.Role, StringComparison.OrdinalIgnoreCase))
             {
                 return null;
             }

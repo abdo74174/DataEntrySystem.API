@@ -18,7 +18,9 @@ namespace DataEntrySystem.API.Repositories.Implementations
 
         public async Task<User?> GetByUsernameAsync(string username)
         {
-            return await _context.Users.AsNoTracking().FirstOrDefaultAsync(u => u.Username == username);
+            return await _context.Users
+                .AsNoTracking()
+                .FirstOrDefaultAsync(u => u.Username.ToLower() == username.ToLower());
         }
 
         public async Task<User?> GetByIdAsync(int id)
@@ -40,7 +42,7 @@ namespace DataEntrySystem.API.Repositories.Implementations
 
         public async Task<bool> ExistsAsync(string username)
         {
-            return await _context.Users.AnyAsync(u => u.Username == username);
+            return await _context.Users.AnyAsync(u => u.Username.ToLower() == username.ToLower());
         }
 
         public async Task<List<User>> GetAllAsync()
