@@ -1,0 +1,15 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+F:\projects\MOHAMED AHMED\PROJECT\Backend\Migrations\20260311084658_init.cs(9,26): warning CS8981: The type name 'init' only contains lower-cased ascii characters. Such names may become reserved for the language. [F:\projects\MOHAMED AHMED\PROJECT\Backend\DataEntrySystem.API.csproj]
+F:\projects\MOHAMED AHMED\PROJECT\Backend\Migrations\20260311084658_init.Designer.cs(16,19): warning CS8981: The type name 'init' only contains lower-cased ascii characters. Such names may become reserved for the language. [F:\projects\MOHAMED AHMED\PROJECT\Backend\DataEntrySystem.API.csproj]
+C:\Program Files\dotnet\sdk\9.0.312\Microsoft.Common.CurrentVersion.targets(5394,5): error MSB3021: Unable to copy file "F:\projects\MOHAMED AHMED\PROJECT\Backend\obj\Debug\net9.0\apphost.exe" to "bin\Debug\net9.0\DataEntrySystem.API.exe". Access to the path 'F:\projects\MOHAMED AHMED\PROJECT\Backend\bin\Debug\net9.0\DataEntrySystem.API.exe' is denied. [F:\projects\MOHAMED AHMED\PROJECT\Backend\DataEntrySystem.API.csproj]
+
+Build FAILED.
+
+F:\projects\MOHAMED AHMED\PROJECT\Backend\Migrations\20260311084658_init.cs(9,26): warning CS8981: The type name 'init' only contains lower-cased ascii characters. Such names may become reserved for the language. [F:\projects\MOHAMED AHMED\PROJECT\Backend\DataEntrySystem.API.csproj]
+F:\projects\MOHAMED AHMED\PROJECT\Backend\Migrations\20260311084658_init.Designer.cs(16,19): warning CS8981: The type name 'init' only contains lower-cased ascii characters. Such names may become reserved for the language. [F:\projects\MOHAMED AHMED\PROJECT\Backend\DataEntrySystem.API.csproj]
+C:\Program Files\dotnet\sdk\9.0.312\Microsoft.Common.CurrentVersion.targets(5394,5): error MSB3021: Unable to copy file "F:\projects\MOHAMED AHMED\PROJECT\Backend\obj\Debug\net9.0\apphost.exe" to "bin\Debug\net9.0\DataEntrySystem.API.exe". Access to the path 'F:\projects\MOHAMED AHMED\PROJECT\Backend\bin\Debug\net9.0\DataEntrySystem.API.exe' is denied. [F:\projects\MOHAMED AHMED\PROJECT\Backend\DataEntrySystem.API.csproj]
+    2 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:03.85
