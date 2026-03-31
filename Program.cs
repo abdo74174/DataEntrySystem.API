@@ -69,20 +69,27 @@ builder.Services.AddCors(options =>
 var app = builder.Build();
 
 // Seed Database
-// Seed Database
-using (var scope = app.Services.CreateScope())
+try
 {
+    using var scope = app.Services.CreateScope();
     var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
     DbInitializer.Seed(context);
+}
+catch (Exception ex)
+{
+    // Log seeder error but allow app to start
+    var logger = app.Services.GetRequiredService<ILogger<Program>>();
+    logger.LogCritical(ex, "DATABASE SEEDING FAILED: The application will start but data may be missing.");
 }
 
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+// ALWAYS enable Swagger for now to confirm deployment
+app.UseSwagger();
+app.UseSwaggerUI(c => {
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Data Entry System API V1");
+    c.RoutePrefix = string.Empty; // Set Swagger as the home page
+});
 
 app.UseMiddleware<ExceptionMiddleware>();
 
